@@ -1,0 +1,33 @@
+- name: smgii output priority
+  unique_id: smgii_1_output_priority
+  options: "{{ ['UTI', 'SOL', 'SBU', 'SUB'] }}"
+  state: >
+    {% if (this.attributes.options|list|count > 0) %}
+      {{ this.attributes.options[int(states('sensor.smgii_output_priority'))] }}
+    {% endif %}
+  availability: "{{ not (states('sensor.smgii_output_priority') in ['unavailable', 'unknown', 'none']) }}"
+  select_option:
+    - service: modbus.write_register
+      data:
+        address: 301
+        #address: "{{ state_attr('sensor.smgii_output_priority', 'address')|int }}"   Why is it not working?
+        unit: 1
+        #unit: "{{ sensor.smgii_output_priority.slave|int }}"
+        hub: easun_smg_ii
+        value: "{{ [this.attributes.options.index(option)] }}"
+
+- name: smgii battery charging priority
+  unique_id: smgii_1_battery_charging_priority
+  options: "{{ ['Utility prioity', 'PV priority', 'PV and Utility', 'Only PV'] }}"
+  state: >
+    {% if (this.attributes.options|list|count > 0) %}
+      {{ this.attributes.options[int(states('sensor.smgii_battery_charging_priority'))] }}
+    {% endif %}
+  availability: "{{ not states('sensor.smgii_battery_charging_priority') in ['unavailable', 'unknown', 'none'] }}"
+  select_option:
+    - service: modbus.write_register
+      data:
+        address: 331
+        unit: 1
+        hub: easun_smg_ii
+        value: "{{ [this.attributes.options.index(option)] }}"

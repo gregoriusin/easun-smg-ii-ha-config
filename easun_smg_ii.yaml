@@ -1,0 +1,16 @@
+modbus:
+  - name: easun_smg_ii
+    type: serial
+    baudrate: 9600
+    bytesize: 8
+    method: rtu
+    parity: N
+    port: /dev/ttyUSB0
+    stopbits: 1
+
+    sensors: !include easun_smg_ii_sensors.yaml
+    switches: !include easun_smg_ii_switches.yaml
+
+template:
+  select: !include easun_smg_ii_template_select.yaml
+  number: !include easun_smg_ii_template_number.yaml

@@ -1,0 +1,15 @@
+- name: smgii LCD backlight
+  slave: 1
+  address: 305
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:
+
+- name: smgii Remote switch
+  slave: 1
+  address: 420
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:

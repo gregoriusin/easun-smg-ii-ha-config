@@ -1,0 +1,573 @@
+- name: smgii Fault code
+  slave: 1
+  address: 100
+  data_type: uint32
+  count: 2
+  input_type: holding
+  unique_id: smgii1_Fault_code
+
+- name: smgii Obtain warning code
+  slave: 1
+  address: 108
+  data_type: uint32
+  count: 2
+  input_type: holding
+  unique_id: smgii1_Obtain_warning_code
+
+- name: smgii Series NO
+  slave: 1
+  address: 186
+  data_type: string
+  count: 12
+  input_type: holding
+  unique_id: smgii1_Series_NO
+
+- name: smgii Working Mode
+  slave: 1
+  address: 201
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Working_Mode
+  #0: Power On Mode
+  #1: Standby mode
+  #2: Mains mode
+  #3: Off-Grid mode
+  #4: Bypass mode
+  #5: Charging mode
+  #6: Fault mode
+
+- name: smgii Effective mains voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 202
+  data_type: int16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Effective_mains_voltage
+
+- name: smgii Mains Frequency
+  unit_of_measurement: Hz
+  slave: 1
+  address: 203
+  data_type: int16
+  device_class: frequency
+  scale: 0.01
+  precision: 2
+  input_type: holding
+  unique_id: smgii1_Mains_Frequency
+
+- name: smgii Average mains power
+  unit_of_measurement: W
+  slave: 1
+  address: 204
+  data_type: int16
+  device_class: power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Average_mains_power
+
+- name: smgii Affective inverter voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 205
+  data_type: int16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Affective_inverter_voltage
+
+- name: smgii Affective inverter current
+  unit_of_measurement: A
+  slave: 1
+  address: 206
+  data_type: int16
+  device_class: current
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Affective_inverter_current
+
+- name: smgii Inverter frequency
+  unit_of_measurement: Hz
+  slave: 1
+  address: 207
+  data_type: int16
+  device_class: frequency
+  scale: 0.01
+  precision: 2
+  input_type: holding
+  unique_id: smgii1_Inverter_frequency
+
+- name: smgii Average inverter power
+  unit_of_measurement: W
+  slave: 1
+  address: 208
+  data_type: int16
+  device_class: power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Average_inverter_power
+
+- name: smgii Inverter charging power
+  unit_of_measurement: W
+  slave: 1
+  address: 209
+  data_type: int16
+  device_class: power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Inverter_charging_power
+
+- name: smgii Output effective voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 210
+  data_type: int16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Output_effective_voltage
+
+- name: smgii Output effective Current
+  unit_of_measurement: A
+  slave: 1
+  address: 211
+  data_type: int16
+  device_class: current
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Output_effective_Current
+
+- name: smgii Output frequency
+  unit_of_measurement: Hz
+  slave: 1
+  address: 212
+  data_type: int16
+  device_class: frequency
+  scale: 0.01
+  precision: 2
+  input_type: holding
+  unique_id: smgii1_Output_frequency
+
+- name: smgii Output active power
+  unit_of_measurement: W
+  slave: 1
+  address: 213
+  data_type: int16
+  device_class: power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Output_active_power
+
+- name: smgii Output apparent power
+  unit_of_measurement: VA
+  slave: 1
+  address: 214
+  data_type: int16
+  device_class: apparent_power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Output_apparent_power
+
+- name: smgii Battery average voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 215
+  data_type: int16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Battery_average_voltage
+
+- name: smgii Battery average Current
+  unit_of_measurement: A
+  slave: 1
+  address: 216
+  data_type: int16
+  device_class: current
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Battery_average_Current
+
+- name: smgii Battery average power
+  unit_of_measurement: W
+  slave: 1
+  address: 217
+  data_type: int16
+  device_class: power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Battery_average_power
+
+- name: smgii PV average voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 219
+  data_type: int16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_PV_average_voltage
+
+- name: smgii PV average Current
+  unit_of_measurement: A
+  slave: 1
+  address: 220
+  data_type: int16
+  device_class: current
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_PV_average_Current
+
+- name: smgii PV average power
+  unit_of_measurement: W
+  slave: 1
+  address: 223
+  data_type: int16
+  device_class: power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_PV_average_power
+
+- name: smgii PV charging average power
+  unit_of_measurement: W
+  slave: 1
+  address: 224
+  data_type: int16
+  device_class: power
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_PV_charging_average_power
+
+- name: smgii load percentage
+  unit_of_measurement: "%"
+  slave: 1
+  address: 225
+  data_type: int16
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_load_percentage
+
+- name: smgii DCDC Temperature
+  unit_of_measurement: °C
+  slave: 1
+  address: 226
+  data_type: int16
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_DCDC_Temperature
+
+- name: smgii Inverter Temperature
+  unit_of_measurement: °C
+  slave: 1
+  address: 227
+  data_type: int16
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Inverter_Temperature
+
+- name: smgii Battery percentage
+  unit_of_measurement: "%"
+  slave: 1
+  address: 229
+  data_type: uint16
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Battery_percentage
+
+- name: smgii Battery average current
+  unit_of_measurement: A
+  slave: 1
+  address: 232
+  data_type: int16
+  device_class: current
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Battery_average_current
+
+- name: smgii Inverter charging average current
+  unit_of_measurement: A
+  slave: 1
+  address: 233
+  data_type: int16
+  device_class: current
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Inverter_charging_average_current
+
+- name: smgii PV charging average current
+  unit_of_measurement: A
+  slave: 1
+  address: 234
+  data_type: int16
+  device_class: current
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_PV_charging_average_current
+
+- name: smgii Output Mode
+  slave: 1
+  address: 300
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Output_Mode
+#R/W
+#0:Single;
+#1: Parallel;
+#2: 3 Phase-P1
+#3: 3 Phase-P2
+#4: 3 Phase-P3
+
+- name: smgii Output priority
+  slave: 1
+  address: 301
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Output_priority
+#R/W
+#0: Utility-PV-Battery
+#1: PV-Utility-Battery
+#2: PV-Battery-Utility
+
+- name: smgii Input voltage range
+  slave: 1
+  address: 302
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Input_voltage_range
+
+- name: smgii Buzzer mode
+  slave: 1
+  address: 303
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Buzzer_mode
+
+- name: smgii LCD automatically returns to the homepage
+  slave: 1
+  address: 306
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_LCD_automatically_returns_to_the_homepage
+
+- name: smgii Energy-saving mode
+  slave: 1
+  address: 307
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Energy_saving_mode
+
+- name: smgii Overload automatic restart
+  slave: 1
+  address: 308
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Overload_automatic_restart
+
+- name: smgii Over temperature automatic restart
+  slave: 1
+  address: 309
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Over_temperature_automatic_restart
+
+- name: smgii Overload transfer to bypass enabled
+  slave: 1
+  address: 310
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Overload_transfer_to_bypass_enabled
+
+- name: smgii Battery Eq mode is enabled
+  slave: 1
+  address: 313
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Battery_Eq_mode_is_enabled
+
+- name: smgii Output voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 320
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Output_voltage
+
+- name: smgii Output frequency RW
+  unit_of_measurement: Hz
+  slave: 1
+  address: 321
+  data_type: uint16
+  device_class: frequency
+  scale: 0.01
+  precision: 2
+  input_type: holding
+  unique_id: smgii1_Output_frequency_RW
+
+- name: smgii Battery overvoltage protection point
+  unit_of_measurement: V
+  slave: 1
+  address: 323
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Battery_overvoltage_protection_point
+
+- name: smgii Max charging voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 324
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Max_charging_voltage
+
+- name: smgii Floating charging voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 325
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Floating_charging_voltage
+
+- name: smgii Battery discharge recovery point in mains mode
+  unit_of_measurement: V
+  slave: 1
+  address: 326
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Battery_discharge_recovery_point_in_mains_mode
+
+- name: smgii Battery low voltage protection point in mains mode
+  unit_of_measurement: V
+  slave: 1
+  address: 327
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Battery_low_voltage_protection_point_in_mains_mode
+
+- name: smgii Battery low voltage protection point in off-grid mode
+  unit_of_measurement: V
+  slave: 1
+  address: 329
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Battery_low_voltage_protection_point_in_off_grid_mode
+
+- name: smgii Battery charging priority
+  slave: 1
+  address: 331
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Battery_charging_priority
+
+- name: smgii Maximum charging current
+  unit_of_measurement: A
+  slave: 1
+  address: 332
+  data_type: uint16
+  device_class: current
+  scale: 0.1
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Maximum_charging_current
+
+- name: smgii Maximum mains charging current
+  unit_of_measurement: A
+  slave: 1
+  address: 333
+  data_type: uint16
+  device_class: current
+  scale: 0.1
+  precision: 0
+  input_type: holding
+  unique_id: smgii1_Maximum_mains_charging_current
+
+- name: smgii Eq Charging voltage
+  unit_of_measurement: V
+  slave: 1
+  address: 334
+  data_type: uint16
+  device_class: voltage
+  scale: 0.1
+  precision: 1
+  input_type: holding
+  unique_id: smgii1_Eq_Charging_voltage
+
+- name: smgii bat_eq_time
+  unit_of_measurement: min
+  slave: 1
+  address: 335
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_bat_eq_time
+
+- name: smgii Eq Timeout exit
+  unit_of_measurement: min
+  slave: 1
+  address: 336
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Eq_Timeout_exit
+
+- name: smgii Two Eq charging intervals
+  unit_of_measurement: day
+  slave: 1
+  address: 337
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Two_Eq_charging_intervals
+
+- name: smgii Turn on mode
+  slave: 1
+  address: 406
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Turn_on_mode
+
+- name: smgii Exit the fault mode
+  slave: 1
+  address: 426
+  data_type: uint16
+  input_type: holding
+  unique_id: smgii1_Exit_the_fault_mode
+
+- name: smgii Rated Power
+  unit_of_measurement: W
+  slave: 1
+  address: 643
+  data_type: uint16
+  device_class: power
+  input_type: holding
+  unique_id: smgii1_Rated_Power
