@@ -1,0 +1,104 @@
+- name: smgii_working_mode_text
+  unique_id: smgii_1_smgii_working_mode_text
+  state: >
+    {% set modes = {
+      '0': 'Power On Mode',
+      '1': 'Standby mode',
+      '2': 'Mains mode',
+      '3': 'Off-Grid mode',
+      '4': 'Bypass mode',
+      '5': 'Charging mode',
+      '6': 'Fault mode'}
+    %}
+    {% if states('sensor.smgii_working_mode') in modes.keys() %}
+      {{ modes.get(states('sensor.smgii_working_mode')) }}
+    {% else %}
+      {{ states('sensor.smgii_working_mode') }}
+    {% endif %}
+
+- name: smgii_fault_code_text
+  unique_id: smgii_1_fault_code_text
+  state: >
+    {% set codes = {
+      1 : 'Over temperature of inverter module',
+      2 : 'Over temperature of DCDC module',
+      3 : 'Battery over voltage',
+      4 : 'Over temperature of PV module',
+      5 : 'Output short circuited',
+      6 : 'Over Inverter voltage',
+      7 : 'Output over load',
+      8 : 'Bus over voltage',
+      9 : 'Bus soft start times out',
+      10: 'PV over current',
+      11: 'PV over voltage',
+      12: 'Battery over current',
+      13: 'Inverter over current',
+      14: 'Bus low voltage',
+      15: 'bit 15 Reserve',
+      16: 'Inverter DC component is too high',
+      17: 'bit 17 Reserve',
+      18: 'The zero bias of Output current is too large',
+      19: 'The zero bias of inverter current is too large',
+      20: 'The zero bias of battery current is too large',
+      21: 'The zero bias of PV current is too large',
+      22: 'Inverter low voltage',
+      23: 'Inverter negative power protection',
+      24: 'The host in the parallel system is lost',
+      25: 'Synchronization signal abnormal in the parallel system',
+      26: 'The battery type is incompatible',
+      27: 'Parallel versions are incompatible'}
+    %}
+    {% set code = states('sensor.smgii_fault_code')|int(-1) %}
+    {% if code == -1 %}
+      {{ states('sensor.smgii_fault_code') }}
+    {% elif code == 0 %}
+      {{ 'OK' }}
+    {% else %}
+      {% for bit in codes.keys() %}
+        {% if code|bitwise_and(2 ** (bit - 1)) %}
+          {{ codes[bit] + '\n' }}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+- name: smgii_obtain_warning_code_text
+  unique_id: smgii_1_obtain_warning_code_text
+  state: >
+    {% set codes = {
+      1 : 'bit 1 Reserve',
+      2 : 'Mains waveform abnormal',
+      3 : 'bit 3 Reserve',
+      4 : 'Mains low voltage',
+      5 : 'Mains over frequency',
+      6 : 'Mains low frequency',
+      7 : 'PV low voltage',
+      8 : 'Over temperature',
+      9 : 'Battery low voltage',
+      10: 'Battery is not connected',
+      11: 'Overload',
+      12: 'Battery Eq charging',
+      13: 'Battery is discharged at a low voltage and it has not been charged back to the recovery point',
+      14: 'Output power derating',
+      15: 'Fan blocked',
+      16: 'PV energy is too low to be use',
+      17: 'Parallel communication interrupted',
+      18: 'Output mode of Single and Parallel systems is inconsistent',
+      19: 'Battery voltage difference of parallel system is too large'}
+    %}
+    {% set code = states('sensor.smgii_obtain_warning_code')|int(-1) %}
+    {% set ns = namespace(out='') %}
+    {% if code == -1 %}
+      {{ states('sensor.smgii_obtain_warning_code') }}
+    {% elif code == 0 %}
+      {{ 'OK' }}
+    {% else %}
+      {% for bit in codes.keys() %}
+        {% if code|bitwise_and(2 ** (bit - 1)) %}
+          {% if ns.out != '' %}
+            {% set ns.out = ns.out + ', ' %}
+          {% endif %}
+          {% set ns.out = ns.out + codes[bit] %}
+        {% endif %}
+      {% endfor %}
+      {{ns.out}}
+    {% endif %}

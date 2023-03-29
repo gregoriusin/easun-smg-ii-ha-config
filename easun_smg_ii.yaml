@@ -14,3 +14,4 @@ modbus:
 template:
   select: !include easun_smg_ii_template_select.yaml
   number: !include easun_smg_ii_template_number.yaml
+  sensor: !include easun_smg_ii_template_sensor.yaml
