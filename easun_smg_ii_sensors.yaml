@@ -355,48 +355,6 @@
   input_type: holding
   unique_id: smgii1_Buzzer_mode
 
-- name: smgii LCD automatically returns to the homepage
-  slave: 1
-  address: 306
-  data_type: uint16
-  input_type: holding
-  unique_id: smgii1_LCD_automatically_returns_to_the_homepage
-
-- name: smgii Energy-saving mode
-  slave: 1
-  address: 307
-  data_type: uint16
-  input_type: holding
-  unique_id: smgii1_Energy_saving_mode
-
-- name: smgii Overload automatic restart
-  slave: 1
-  address: 308
-  data_type: uint16
-  input_type: holding
-  unique_id: smgii1_Overload_automatic_restart
-
-- name: smgii Over temperature automatic restart
-  slave: 1
-  address: 309
-  data_type: uint16
-  input_type: holding
-  unique_id: smgii1_Over_temperature_automatic_restart
-
-- name: smgii Overload transfer to bypass enabled
-  slave: 1
-  address: 310
-  data_type: uint16
-  input_type: holding
-  unique_id: smgii1_Overload_transfer_to_bypass_enabled
-
-- name: smgii Battery Eq mode is enabled
-  slave: 1
-  address: 313
-  data_type: uint16
-  input_type: holding
-  unique_id: smgii1_Battery_Eq_mode_is_enabled
-
 - name: smgii Output voltage
   unit_of_measurement: V
   slave: 1

@@ -1,4 +1,5 @@
 - name: smgii LCD backlight
+  unique_id: smgii1_lcd_backlight
   slave: 1
   address: 305
   write_type: holdings
@@ -6,7 +7,62 @@
   command_off: 0
   verify:
 
+- name: smgii LCD automatically returns to the homepage
+  unique_id: smgii1_lcd_automatically_returns_to_the_homepage
+  slave: 1
+  address: 306
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:
+
+- name: smgii Energy-saving mode
+  unique_id: smgii1_energy_saving_mode
+  slave: 1
+  address: 307
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:
+
+- name: smgii Overload automatic restart
+  unique_id: smgii1_overload_automatic_restart
+  slave: 1
+  address: 308
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:
+
+- name: smgii Over temperature automatic restart
+  unique_id: smgii1_over_temperature_automatic_restart
+  slave: 1
+  address: 309
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:
+
+- name: smgii Overload transfer to bypass enabled
+  unique_id: smgii1_Overload_transfer_to_bypass_enabled
+  slave: 1
+  address: 310
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:
+
+- name: smgii Battery Eq mode is enabled
+  unique_id: smgii1_battery_eq_mode_is_enabled
+  slave: 1
+  address: 313
+  write_type: holdings
+  command_on: 1
+  command_off: 0
+  verify:
+
 - name: smgii Remote switch
+  unique_id: smgii1_remote_switch
   slave: 1
   address: 420
   write_type: holdings
